@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>查看结果</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script>
+        var app=angular.module('myApp',[]);
+        app.controller('myCtrl', function ($scope) {
+            $scope.result=angular.fromJson(window.localStorage['result']);
+            console.log($scope.result);
+        });
+    </script>
+</head>
+<body  style="text-align: center;font-family: '微软雅黑';font-size: 18px" >
+<div style="padding:40% 10% 20% 10%" ng-app="myApp" ng-controller="myCtrl">
+    <div style="padding: 20px 0px 50px 0px">{{result.text}}</div>
+    <div>你适合的职业有:<br/><span style="color: red"><b>{{result.val}}</b></span></div>
+    <div style="margin-top: 50px"><a type="button"  class="btn btn-primary" href="../index.html">再测一次</a></div>
+</div>
+</body>
+</html>
